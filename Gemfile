@@ -16,6 +16,8 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "devise"
 gem "cancancan"
+gem "gmaps4rails"
+gem "geocoder"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
 
