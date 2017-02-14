@@ -7,6 +7,7 @@ end
 
 gem "rails", "~> 5.0.1"
 gem "sqlite3"
+gem "geocoder"
 gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -15,9 +16,13 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "devise"
+gem "gmaps4rails"
+gem "omniauth"
+gem "omniauth-facebook"
 gem "cancancan"
 gem "bootstrap-sass"
 gem "font-awesome-rails"
+gem "ffaker"
 
 group :development, :test do
   gem "byebug", platform: :mri

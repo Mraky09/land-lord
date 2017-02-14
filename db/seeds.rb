@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# House.create!(house_address: FFaker::AddressUS.secondary_address, longitude: , latitude: , description: , user_id: 1)
