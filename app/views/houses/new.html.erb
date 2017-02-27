@@ -1,0 +1,339 @@
+<div id="page-content">
+  <!-- Breadcrumb -->
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%= link_to "Trang chủ", root_path %></li>
+      <li class="active">Add your property</li>
+    </ol>
+  </div>
+  <!-- end Breadcrumb -->
+  <div class="container">
+    <header>
+      <h1>Add Your Property</h1>
+    </header>
+    <div class="row">
+      <!-- Submit-->
+      <div class="col-md-9 col-sm-9">
+        <section id="submit" class="submit">
+          <section id="select-package">
+            <div class="table-responsive submit-pricing">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Your Package:</th>
+                    <th class="title">Free</th>
+                    <th class="title">Silver</th>
+                    <th class="title">Gold</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="prices">
+                    <td></td>
+                    <td>$0</td>
+                    <td>$20</td>
+                    <td>$40</td>
+                  </tr>
+                  <tr>
+                    <td>Property Submit Limit</td>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>Agent Profiles</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>Agency Profiles</td>
+                    <td class="not-available"><i class="fa fa-times"></i></td>
+                    <td>5</td>
+                    <td>Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td>Featured Properties</td>
+                    <td class="not-available"><i class="fa fa-times"></i></td>
+                    <td class="available"><i class="fa fa-check"></i></td>
+                    <td class="available"><i class="fa fa-check"></i></td>
+                  </tr>
+                  <tr class="buttons">
+                    <td></td>
+                    <td class="package-selected" data-package="free"><button type="button" class="btn btn-default small">Select</button></td>
+                    <td data-package="silver"><button type="button" class="btn btn-default small">Select</button></td>
+                    <td data-package="gold"><button type="button" class="btn btn-default small">Select</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.submit-pricing -->
+          </section>
+          <!-- /#select-package -->
+        </section>
+        <!-- /#submit -->
+      </div>
+      <!-- /.col-md-9 -->
+      <aside class="col-md-3 col-sm-3">
+        <div class="submit-step">
+          <figure class="step-number">1</figure>
+          <div class="description">
+            <h4>Select Your Price Package</h4>
+            <p>Choose from price packages one that suit your need. If you have chosen package before,
+              it will be automatically selected.
+            </p>
+          </div>
+        </div>
+        <!-- /.submit-step -->
+      </aside>
+      <!-- /.col-md-3 -->
+    </div>
+    <!-- /.row -->
+    <form role="form" id="form-submit" class="form-submit" action="thank-you.html">
+      <div class="row">
+        <div class="block">
+          <div class="col-md-9 col-sm-9">
+            <section id="submit-form">
+              <section id="basic-information">
+                <header>
+                  <h2>Basic Information</h2>
+                </header>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label for="submit-title">Title</label>
+                      <input type="text" class="form-control" id="submit-title" name="title" required>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="submit-price">Price</label>
+                      <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" id="submit-price" name="price" pattern="\d*" required>
+                      </div>
+                    </div>
+                    <!-- /.form-group -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="submit-description">Description</label>
+                  <textarea class="form-control" id="submit-description" rows="8" name="submit-description" required></textarea>
+                </div>
+                <!-- /.form-group -->
+              </section>
+              <!-- /#basic-information -->
+              <section>
+                <div class="row">
+                  <div class="block clearfix">
+                    <div class="col-md-6 col-sm-6">
+                      <section id="summary">
+                        <header>
+                          <h2>Summary</h2>
+                        </header>
+                        <div class="form-group">
+                          <label for="submit-location">Thành phố</label>
+                          <select name="type" id="submit-location">
+                            <option value="1">Hà Nội</option>
+                            <option value="2">Sài Gòn</option>
+                          </select>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-property-type">Loại nhà đất</label>
+                              <select name="type" id="submit-property-type">
+                                <option value="1">Phòng</option>
+                                <option value="2">Căn hộ</option>
+                                <option value="3">Nhà riêng</option>
+                              </select>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-status">Trạng thái</label>
+                              <select name="type" id="submit-status">
+                                <option value="1">Bán</option>
+                                <option value="2">Cho thuê</option>
+                              </select>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-Beds">Giường</label>
+                              <input type="text" class="form-control" id="submit-Beds" name="Beds" pattern="\d*" required>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-Baths">Số phòng tắm</label>
+                              <input type="text" class="form-control" id="submit-Baths" name="Baths" pattern="\d*" required>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-area">Diện tích</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="submit-area" name="area" pattern="\d*" required>
+                                <span class="input-group-addon">m<sup>2</sup></span>
+                              </div>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                          <div class="col-md-6 col-sm-6">
+                            <div class="form-group">
+                              <label for="submit-garages">Số phòng ngủ</label>
+                              <input type="text" class="form-control" id="submit-garages" name="garages" pattern="\d*" required>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <!-- /.col-md-6 -->
+                        </div>
+                        <!-- /.row -->
+                        <div class="checkbox">
+                          <label>
+                          <input type="checkbox">Allow user rating <i class="fa fa-question-circle tool-tip"  data-toggle="tooltip" data-placement="right" title="Users can give you a stars rating which is displayed in property detail"></i>
+                          </label>
+                        </div>
+                      </section>
+                      <!-- /#summary -->
+                    </div>
+                    <!-- /.col-md-6 -->
+                    <div class="col-md-6 col-sm-6">
+                      <section id="place-on-map">
+                        <header class="section-title">
+                          <h2>Địa điểm trên bản đồ</h2>
+                          <span class="link-arrow geo-location">Lấy vị trí của tôi</span>
+                        </header>
+                        <div class="form-group">
+                          <label for="address-map">Địa chỉ</label>
+                          <input type="text" class="form-control" id="address-map" name="address">
+                        </div>
+                        <!-- /.form-group -->
+                        <label for="address-map">Hoặc đặt chọn vị trí nhà trên bản đồ</label>
+                        <div id="submit-map"></div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="latitude" name="latitude" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="longitude" name="longitude" readonly>
+                            </div>
+                            <!-- /.form-group -->
+                          </div>
+                        </div>
+                      </section>
+                      <!-- /#place-on-map -->
+                    </div>
+                    <!-- /.col-md-6 -->
+                  </div>
+                  <!-- /.block -->
+                </div>
+                <!-- /.row -->
+              </section>
+              <section class="block" id="gallery">
+                <header>
+                  <h2>Hình ảnh</h2>
+                </header>
+                <div class="center">
+                  <div class="form-group">
+                    <input id="file-upload" type="file" class="file" multiple="true" data-show-upload="false" data-show-caption="false" data-show-remove="false" accept="image/jpeg,image/png" data-browse-class="btn btn-default" data-browse-label="Browse Images">
+                    <figure class="note"><strong>Hint:</strong> You can upload all images at once!</figure>
+                  </div>
+                </div>
+              </section>
+              <section id="property-features" class="block">
+                <section>
+                  <header>
+                    <h2>Tiện nghi đi kèm</h2>
+                  </header>
+                  <ul class="submit-features">
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Điều hòa</label></div>
+                    </li>
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Truyền hình cáp</label></div>
+                    </li>
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Wi-fi</label></div>
+                    </li>
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Ban công</label></div>
+                    </li>
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Sân thượng</label></div>
+                    </li>
+                    <li>
+                      <div class="checkbox"><label><input type="checkbox">Chỗ để xe</label></div>
+                    </li>
+                  </ul>
+                </section>
+              </section>
+              <hr>
+            </section>
+          </div>
+          <!-- /.col-md-9 -->
+          <div class="col-md-3 col-sm-3">
+            <aside class="submit-step">
+              <figure class="step-number">2</figure>
+              <div class="description">
+                <h4>Enter Information About Property</h4>
+                <p>Type information about your property. Be descriptive.
+                </p>
+              </div>
+            </aside>
+            <!-- /.submit-step -->
+          </div>
+          <!-- /.col-md-3 -->
+        </div>
+      </div>
+      <!-- /.row -->
+      <div class="row">
+        <div class="block">
+          <div class="col-md-9 col-sm-9">
+            <div class="center">
+              <div class="form-group">
+                <button type="submit" class="btn btn-default large">Gửi thông tin</button>
+              </div>
+              <!-- /.form-group -->
+              <figure class="note block">By clicking the “Proceed to Payment” or “Submit” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <aside class="submit-step">
+              <figure class="step-number">3</figure>
+              <div class="description">
+                <h4>Review Information and Proceed to Payment</h4>
+                <p>Carefully check entered information and than click button to submit them.
+                </p>
+              </div>
+            </aside>
+            <!-- /.submit-step -->
+          </div>
+          <!-- /.col-md-3 -->
+        </div>
+      </div>
+    </form>
+    <!-- /#form-submit -->
+  </div>
+  <!-- /.container -->
+</div>

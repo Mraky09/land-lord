@@ -1,29 +1,53 @@
-<h2>Sign up</h2>
+ <div id="page-content">
+    <!-- Breadcrumb -->
+    <div class="container">
+      <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li class="active">Đăng ký</li>
+      </ol>
+    </div>
+    <!-- end Breadcrumb -->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        <div class="container">
+            <header><h1>Đăng ký</h1></header>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <div class="form-group">
+                      <%= f.label :first_name %>
+                      <%= f.text_field :first_name, require: true %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :last_name %>
+                      <%= f.text_field :last_name, require: true %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, require: true %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :password %>
+                      <%= f.password_field :password, autocomplete: "off" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :password_confirmation %><br />
+                      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                    </div>
+                    <div class="checkbox pull-left">
+                      <label>
+                          <input type="checkbox" id="account-type-newsletter" name="account-newsletter">Nhận tin từ chúng tô<i></i>
+                      </label>
+                    </div>
+                    <div class="form-group clearfix">
+                      <%= f.submit "Đăng ký", class: "btn pull-right btn-default" %>
+                    </div>
+                  <% end %>
+                    <hr>
+                    <div class="center">
+                        <figure class="note">By clicking the “Create an Account” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <!-- end Page Content -->
