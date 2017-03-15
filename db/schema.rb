@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222060652) do
+ActiveRecord::Schema.define(version: 20170315035350) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string   "content"
@@ -18,14 +24,37 @@ ActiveRecord::Schema.define(version: 20170222060652) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "districts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "houses", force: :cascade do |t|
+    t.string   "title"
     t.string   "address"
     t.text     "description"
+    t.integer  "no_bed_room"
+    t.integer  "no_bath_room"
+    t.integer  "status"
+    t.integer  "type"
+    t.float    "area"
+    t.float    "price"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.float    "latitude"
-    t.float    "longitude"
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.integer  "district_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["city_id"], name: "index_houses_on_city_id"
+    t.index ["country_id"], name: "index_houses_on_country_id"
+    t.index ["district_id"], name: "index_houses_on_district_id"
     t.index ["user_id"], name: "index_houses_on_user_id"
   end
 
@@ -47,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170222060652) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "phone_number",           limit: 14
+    t.date     "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
