@@ -1,9 +1,11 @@
 class House < ApplicationRecord
-  geocoded_by :address
+  mount_uploader :images, HouseImageUploader
+  serialize :images, JSON # If you use SQLite, add this line.  geocoded_by :address
+
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   has_many :specifications
 
-  enum type: [:apartment, :shared, :house]
+  enum house_type: [:apartment, :shared, :house]
   enum status: [:sell, :rent]
 end

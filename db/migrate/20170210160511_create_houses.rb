@@ -7,10 +7,10 @@ class CreateHouses < ActiveRecord::Migration[5.0]
       t.integer :no_bed_room
       t.integer :no_bath_room
       t.integer :status
-      t.integer :type
+      t.integer :house_type
       t.float :area
       t.float :price
-      
+
       t.references :user
       t.references :country
       t.references :city
