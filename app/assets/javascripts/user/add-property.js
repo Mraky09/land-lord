@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   var _latitude = 21.036237;
   var _longitude = 105.790583;
 
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
 
   //      Autocomplete
-    var input = /** @type {HTMLInputElement} */( document.getElementById('address-map') );
+    var input = /** @type {HTMLInputElement} */( document.getElementById('house_address') );
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
     google.maps.event.addListener(autocomplete, 'place_changed', function() {

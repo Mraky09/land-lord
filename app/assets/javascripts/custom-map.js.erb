@@ -240,103 +240,103 @@ function initMap(propertyId) {
 // Google Map - Contact
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function contactUsMap(){
-    var mapCenter = new google.maps.LatLng(_latitude,_longitude);
-    var mapOptions = {
-        zoom: 15,
-        center: mapCenter,
-        disableDefaultUI: false,
-        scrollwheel: false,
-        styles: mapStyles
-    };
-    var mapElement = document.getElementById('contact-map');
-    var map = new google.maps.Map(mapElement, mapOptions);
+// function contactUsMap(){
+//     var mapCenter = new google.maps.LatLng(_latitude,_longitude);
+//     var mapOptions = {
+//         zoom: 15,
+//         center: mapCenter,
+//         disableDefaultUI: false,
+//         scrollwheel: false,
+//         styles: mapStyles
+//     };
+//     var mapElement = document.getElementById('contact-map');
+//     var map = new google.maps.Map(mapElement, mapOptions);
 
-    var marker = new MarkerWithLabel({
-        position: mapCenter,
-        map: map,
-        icon: 'assets/img/marker.png',
-        //labelContent: pictureLabel,
-        labelAnchor: new google.maps.Point(50, 0),
-        labelClass: "marker-style"
-    });
-}
+//     var marker = new MarkerWithLabel({
+//         position: mapCenter,
+//         map: map,
+//         icon: 'assets/img/marker.png',
+//         //labelContent: pictureLabel,
+//         labelAnchor: new google.maps.Point(50, 0),
+//         labelClass: "marker-style"
+//     });
+// }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// OpenStreetMap - Homepage
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // OpenStreetMap - Homepage
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function createHomepageOSM(_latitude,_longitude){
-    setMapHeight();
-    if( document.getElementById('map') != null ){
-        $.getScript("assets/js/locations.js", function(){
-            var map = L.map('map', {
-                center: [_latitude,_longitude],
-                zoom: 14,
-                scrollWheelZoom: false
-            });
-            L.tileLayer('http://openmapsurfer.uni-hd.de/tiles/roadsg/x={x}&y={y}&z={z}', {
-                //L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-                //subdomains: '0123',
-                attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-            }).addTo(map);
-            var markers = L.markerClusterGroup({
-                showCoverageOnHover: false
-            });
-            for (var i = 0; i < locations.length; i++) {
-                var _icon = L.divIcon({
-                    html: '<img src="' + locations[i][7] +'">',
-                    iconSize:     [40, 48],
-                    iconAnchor:   [20, 48],
-                    popupAnchor:  [0, -48]
-                });
-                var title = locations[i][0];
-                var marker = L.marker(new L.LatLng(locations[i][3],locations[i][4]), {
-                    title: title,
-                    icon: _icon
-                });
-                marker.bindPopup(
-                    '<div class="property">' +
-                        '<a href="' + locations[i][5] + '">' +
-                            '<div class="property-image">' +
-                                '<img src="' + locations[i][6] + '">' +
-                            '</div>' +
-                            '<div class="overlay">' +
-                                '<div class="info">' +
-                                    '<div class="tag price"> ' + locations[i][2] + '</div>' +
-                                    '<h3>' + locations[i][0] + '</h3>' +
-                                    '<figure>' + locations[i][1] + '</figure>' +
-                                '</div>' +
-                            '</div>' +
-                        '</a>' +
-                    '</div>'
-                );
-                markers.addLayer(marker);
-            }
+// function createHomepageOSM(_latitude,_longitude){
+//     setMapHeight();
+//     if( document.getElementById('map') != null ){
+//         $.getScript("assets/js/locations.js", function(){
+//             var map = L.map('map', {
+//                 center: [_latitude,_longitude],
+//                 zoom: 14,
+//                 scrollWheelZoom: false
+//             });
+//             L.tileLayer('http://openmapsurfer.uni-hd.de/tiles/roadsg/x={x}&y={y}&z={z}', {
+//                 //L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+//                 //subdomains: '0123',
+//                 attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+//             }).addTo(map);
+//             var markers = L.markerClusterGroup({
+//                 showCoverageOnHover: false
+//             });
+//             for (var i = 0; i < locations.length; i++) {
+//                 var _icon = L.divIcon({
+//                     html: '<img src="' + locations[i][7] +'">',
+//                     iconSize:     [40, 48],
+//                     iconAnchor:   [20, 48],
+//                     popupAnchor:  [0, -48]
+//                 });
+//                 var title = locations[i][0];
+//                 var marker = L.marker(new L.LatLng(locations[i][3],locations[i][4]), {
+//                     title: title,
+//                     icon: _icon
+//                 });
+//                 marker.bindPopup(
+//                     '<div class="property">' +
+//                         '<a href="' + locations[i][5] + '">' +
+//                             '<div class="property-image">' +
+//                                 '<img src="' + locations[i][6] + '">' +
+//                             '</div>' +
+//                             '<div class="overlay">' +
+//                                 '<div class="info">' +
+//                                     '<div class="tag price"> ' + locations[i][2] + '</div>' +
+//                                     '<h3>' + locations[i][0] + '</h3>' +
+//                                     '<figure>' + locations[i][1] + '</figure>' +
+//                                 '</div>' +
+//                             '</div>' +
+//                         '</a>' +
+//                     '</div>'
+//                 );
+//                 markers.addLayer(marker);
+//             }
 
-            map.addLayer(markers);
-            map.on('locationfound', onLocationFound);
+//             map.addLayer(markers);
+//             map.on('locationfound', onLocationFound);
 
-            function locateUser() {
-                $('#map').addClass('fade-map');
-                map.locate({setView : true})
-            }
+//             function locateUser() {
+//                 $('#map').addClass('fade-map');
+//                 map.locate({setView : true})
+//             }
 
-            function onLocationFound(){
-                $('#map').removeClass('fade-map');
-            }
+//             function onLocationFound(){
+//                 $('#map').removeClass('fade-map');
+//             }
 
-            $('.geo-location').on("click", function() {
-                locateUser();
-            });
+//             $('.geo-location').on("click", function() {
+//                 locateUser();
+//             });
 
-            $('body').addClass('loaded');
-            setTimeout(function() {
-                $('body').removeClass('has-fullscreen-map');
-            }, 1000);
-            $('#map').removeClass('fade-map');
-        });
+//             $('body').addClass('loaded');
+//             setTimeout(function() {
+//                 $('body').removeClass('has-fullscreen-map');
+//             }, 1000);
+//             $('#map').removeClass('fade-map');
+//         });
 
-    }
-}
+//     }
+// }
 

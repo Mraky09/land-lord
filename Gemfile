@@ -15,7 +15,6 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "devise"
-gem "gmaps4rails"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "cancancan"
@@ -24,6 +23,9 @@ gem "font-awesome-rails"
 gem "ffaker"
 gem "awesome_print"
 gem "retinajs-rails", "~> 2.1.1"
+gem "jquery-turbolinks"
+gem 'simple_form'
+gem "carrierwave", github:"carrierwaveuploader/carrierwave"
 
 group :development, :test do
   gem "byebug", platform: :mri

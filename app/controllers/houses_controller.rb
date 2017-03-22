@@ -10,18 +10,22 @@ class HousesController < ApplicationController
 
   def new
     @house = House.new
+    # @citites = City.all
   end
 
   def show
   end
 
   def create
-    @house = House.create house_params
-    @house.save
+    byebug
+    @house = House.new house_params
+    if @house.save
+      redirect_to root_path
+    end
   end
 
   private
   def house_params
-    params.require(:house).permit(:address)
+    params.require(:house).permit(:title, :price, :description, :type, :status, :city_id, :no_bed_room, :no_bath_room, :area, {images: []})
   end
 end
