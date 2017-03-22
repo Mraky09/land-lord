@@ -1,5 +1,5 @@
 class House < ApplicationRecord
-  mount_uploader :images, HouseImageUploader
+  mount_uploaders :images, HouseImageUploader
   serialize :images, JSON # If you use SQLite, add this line.  geocoded_by :address
 
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }

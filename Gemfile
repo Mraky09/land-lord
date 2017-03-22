@@ -25,7 +25,7 @@ gem "awesome_print"
 gem "retinajs-rails", "~> 2.1.1"
 gem "jquery-turbolinks"
 gem 'simple_form'
-gem "carrierwave"
+gem "carrierwave", github:"carrierwaveuploader/carrierwave"
 
 group :development, :test do
   gem "byebug", platform: :mri

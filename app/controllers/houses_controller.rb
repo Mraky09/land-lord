@@ -17,6 +17,7 @@ class HousesController < ApplicationController
   end
 
   def create
+    byebug
     @house = House.new house_params
     if @house.save
       redirect_to root_path
@@ -25,6 +26,6 @@ class HousesController < ApplicationController
 
   private
   def house_params
-    params.require(:house).permit(:title, :price, :description, :type, :status, :city_id, :no_bed_room, :no_bath_room, :area)
+    params.require(:house).permit(:title, :price, :description, :type, :status, :city_id, :no_bed_room, :no_bath_room, :area, {images: []})
   end
 end
